@@ -48,6 +48,7 @@ class Login {
 
         if(mysql_num_rows($sql_result) > 0){
             // fetch array ($sql_result), if valid = 1 return true, else header to activation.php
+            
             return TRUE;
         } else{
             throw new Exception('Username or password is invalid');

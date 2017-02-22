@@ -47,9 +47,12 @@ class Login {
         $sql_result = mysql_query($query);
 
         if(mysql_num_rows($sql_result) > 0){
-            // fetch array ($sql_result), if valid = 1 return true, else header to activation.php
+
+            // check for validation
+            while ($row = mysql_fetch_array($sql_result)){$verified = $row['verified'];}
+            if($verified == '1'){return TRUE;}
+            else if($verified == '0'){throw new Exception('Username not verified <br /> Please visit your mail for activation');}
             
-            return TRUE;
         } else{
             throw new Exception('Username or password is invalid');
         }

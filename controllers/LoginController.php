@@ -16,6 +16,8 @@ if($_POST){
                 session_start();
                 $_SESSION['username'] = $username;
                 header('Location:../views/home.php');
+            } else{
+                echo 'Caught exception: ',  $e->getMessage(), "\n";
             }
 
         } catch(Exception $e){

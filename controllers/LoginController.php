@@ -38,10 +38,7 @@ if($_POST){
             $register = new Register($data);
 
             if($register == TRUE){
-                // create class Emails
-                // send email with activation code
-                // prepare activation.php to update activation flag in db
-                header('Location:../views/activation.php');
+                echo "visit your mail for verification";
             }
         } catch(Exception $e){
             echo 'Caught exception: ',  $e->getMessage(), "\n";

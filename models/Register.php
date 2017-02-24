@@ -42,9 +42,9 @@ class Register {
 
     private function registerData(){
 
-        $query = "INSERT INTO `users` (`firstname`,`lastname`,`email`,`password`,`confirm_id`) 
+        $query = "INSERT INTO `users` (`firstname`,`lastname`,`email`,`password`,`confirm_id`, `oauth_provider`) 
                     VALUES ('$this->firstname', '$this->lastname', '$this->email', '$this->password',
-                    '$this->confirm_id')";
+                    '$this->confirm_id', 'localhost')";
         
         $sql_result = mysql_query($query);
         include 'Emails.php';
